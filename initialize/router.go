@@ -11,7 +11,6 @@ func Routers() *gin.Engine {
 
 	PublicGroup := Router.Group(global.CONFIG.System.RouterPrefix)
 	{
-		// 健康监测
 		PublicGroup.GET("/health", func(c *gin.Context) {
 			c.JSON(http.StatusOK, "ok")
 		})

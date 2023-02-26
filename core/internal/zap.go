@@ -40,14 +40,14 @@ func (z *_zap) GetEncoderConfig() zapcore.EncoderConfig {
 	return encoderConfig
 }
 
-func (z *_zap) GetEncoderCore(l zapcore.Level, level zap.LevelEnablerFunc) zapcore.Core {
+func (z *_zap) GetEncoderCore(l zapcore.Level, levelEnablerFunc zap.LevelEnablerFunc) zapcore.Core {
 	writer, err := FileRotatelogs.GetWriteSyncer(l.String())
 	if err != nil {
 		fmt.Printf("Get Write Syncer Failed err:%v", err.Error())
 		return nil
 	}
 
-	return zapcore.NewCore(z.GetEncoder(), writer, level)
+	return zapcore.NewCore(z.GetEncoder(), writer, levelEnablerFunc)
 }
 
 func (z *_zap) GetZapCores() []zapcore.Core {

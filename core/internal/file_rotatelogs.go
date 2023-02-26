@@ -3,6 +3,7 @@ package internal
 import (
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"go.uber.org/zap/zapcore"
+	"os"
 	"path"
 	"pegasuite/global"
 	"time"
@@ -21,7 +22,7 @@ func (r *fileRotatelogs) GetWriteSyncer(level string) (zapcore.WriteSyncer, erro
 	)
 
 	if global.CONFIG.Zap.LogInConsole {
-		return zapcore.NewMultiWriteSyncer(zapcore.AddSync(filewriter), zapcore.AddSync(filewriter)), err
+		return zapcore.NewMultiWriteSyncer(zapcore.AddSync(os.Stdout), zapcore.AddSync(filewriter)), err
 	}
 
 	return zapcore.AddSync(filewriter), err
