@@ -7,6 +7,13 @@ import (
 	"pegasuite/initialize"
 )
 
+// @title                       Pegasuite platform
+// @version                     0.0.1
+// @description                 BE for pegasuite platform
+// @securityDefinitions.apikey  ApiKeyAuth
+// @in                          header
+// @name                        x-token
+// @BasePath                    /
 func main() {
 	global.VIPER = core.Viper()
 	global.LOG = core.Zap()

@@ -1,0 +1,15 @@
+## For dev:
+
+### Install reflex
+
+```bash
+go install github.com/cespare/reflex@latest
+```
+
+### Run
+
+```bash
+make rub.dev
+```
+
+

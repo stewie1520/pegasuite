@@ -1,0 +1,12 @@
+info:
+  contact: {}
+  description: BE for pegasuite platform
+  title: Pegasuite platform
+  version: 0.0.1
+paths: {}
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: x-token
+    type: apiKey
+swagger: "2.0"
