@@ -14,6 +14,7 @@ func Routers() *gin.Engine {
 
 	docs.SwaggerInfo.BasePath = global.CONFIG.System.RouterPrefix
 	Router.GET(global.CONFIG.System.RouterPrefix+"/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	InstallPlugin(Router)
 
 	PublicGroup := Router.Group(global.CONFIG.System.RouterPrefix)
 	{

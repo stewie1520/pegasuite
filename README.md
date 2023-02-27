@@ -9,7 +9,7 @@ go install github.com/cespare/reflex@latest
 ### Run
 
 ```bash
-make rub.dev
+make run.dev
 ```
 
 
